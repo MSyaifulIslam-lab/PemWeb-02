@@ -11,7 +11,7 @@
 <div>
     <h2>Form Nilai Siswa</h2>
     <hr>
-    <br>
+    <br>     
     <form method="GET" action="proses_nilai.php">
     <div class="form-group row">
         <label for="nama" class="col-4 col-form-label">Nama</label> 
