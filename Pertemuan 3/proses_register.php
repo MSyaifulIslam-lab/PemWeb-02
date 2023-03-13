@@ -24,7 +24,26 @@ if(isset($_POST['submit'])) {
                 $result = $result + $skill_list[$skill];
         }
         return $result;
+        $kategori = $result;
     }
+    $grade = skor_skill($skills);
+
+    function kategori_skill($grade) {
+        if($grade == 0) {
+            return "Tidak Memadai";
+        } elseif($grade <= 40) {
+            return "Kurang";
+        } elseif($grade <= 60) {
+            return "Cukup";
+        } elseif($grade <= 100) {
+            return "Baik";
+        } elseif($grade <= 170) {
+            return "Sangat Baik";
+        }
+
+        return $grade;
+    }
+
 
     echo "NIM: $nim <br>";
     echo "Nama: $nama <br>";
@@ -39,5 +58,5 @@ if(isset($_POST['submit'])) {
     echo "<br> Domisili: $domisili <br>";
     echo "Email: $email <br>";
     echo "Skor Skill: " . skor_skill($skills);
-    echo "<br> Kategori Skill: ";
+    echo "<br> Kategori Skill: " . kategori_skill($grade);
 }
